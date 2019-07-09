@@ -217,7 +217,7 @@ h2 {
 						<input id="WIDsubject" name="WIDsubject" />
 					</dd>
 					<hr class="one_line">
-					<dt>付款金额 ：</dt>
+					<dt>应付：<span class="pieces-total">${cart.total}</span></dt>
 					<dd>
 						<input id="WIDtotal_amount" name="WIDtotal_amount" />
 					</dd>
