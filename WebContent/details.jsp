@@ -79,6 +79,7 @@
 	      	  if(pros!=null){
 	      		for(int i=0;i<pros.size();i++){
 	          	  Product pro = (Product)pros.get(i);
+	          	  String pid = pro.getPid();
 	          	  String pname = pro.getPname();
 	          	  String pimage = pro.getPimage();
 	          	  double price = pro.getPrice();
@@ -97,7 +98,7 @@
   			            </div>
   			            
   			            <div class="summary">
-  			              <p class="reference"><span>商品编号</span><p id="p_id">001</p></p>
+  			              <p class="reference"><span>商品编号</span><p id="p_id"><%=pid %></p></p>
   			              <p class="activity"><span>活动价</span><strong class="price"><i>￥</i><%=price %></strong></p>
   			              
   			            </div>
@@ -108,10 +109,8 @@
            				</div>
                         
   			            <div class="choose-btns">
-  			            
-  			        		<a href="pay_index.jsp">
-                             <input class="layui-btn layui-btn-primary purchase-btn" type="submit" value="立即购买"/>
-         					</a>
+                             <button class="layui-btn layui-btn-primary purchase-btn">立刻购买</button>
+         
                              <a href="javascript:void(0)" onclick="addCart()">
                                  <button class="layui-btn  layui-btn-danger car-btn"><i class="layui-icon layui-icon-cart-simple"></i>加入购物车</button>  
                              </a> 

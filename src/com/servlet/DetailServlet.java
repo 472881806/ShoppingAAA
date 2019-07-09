@@ -50,11 +50,13 @@ public class DetailServlet extends HttpServlet {
 			List pros = new ArrayList();
 			
 			while(rs.next()){
+				String pid = rs.getString(1);
 				String pimage = rs.getString(2);
 				String pname = rs.getString(3);
 				double price = rs.getDouble(4);
 				
 				Product pro = new Product();
+				pro.setPid(pid);
 				pro.setPimage(pimage);
 				pro.setPname(pname);
 				pro.setPrice(price);

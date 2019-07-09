@@ -6,7 +6,7 @@ public class Product {
 	private String pname;
 	private double price;
 	
-	
+
 	public String getPimage() {
 		return pimage;
 	}
@@ -31,6 +31,7 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	
 	
 	
 	
