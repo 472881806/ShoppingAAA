@@ -18,7 +18,7 @@ public class ProductDaoImpl implements ProductDao {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/orcl", "scott", "admin");
-			String sql = "select * from Product where pid=?";//PRODUCT是商品表
+			String sql = "select * from Product2 where pid=?";//PRODUCT是商品表
 			PreparedStatement psmt = conn.prepareStatement(sql);
 			psmt.setString(1, pid);
 			ResultSet rs=psmt.executeQuery();

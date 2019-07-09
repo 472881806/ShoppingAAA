@@ -104,7 +104,7 @@
          
             <li class="th th-item">
               <div class="item-cont">
-                <a href="javascript:;"><img src="jq/res/static/img/${entry.value.product.pimage}"></a>
+                <a href="javascript:;"><img src="${entry.value.product.pimage}.jpg"></a>
                 <div class="text">
                   <div class="title">${entry.value.product.pname}</div>
                   

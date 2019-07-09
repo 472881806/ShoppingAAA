@@ -98,7 +98,7 @@
   			            </div>
   			            
   			            <div class="summary">
-  			              <p class="reference"><span>商品编号</span><p id="p_id"><%=pid %></p></p>
+  			              <p class="reference"><span>商品编号</span><p id="p_id">0001</p></p>
   			              <p class="activity"><span>活动价</span><strong class="price"><i>￥</i><%=price %></strong></p>
   			              
   			            </div>
