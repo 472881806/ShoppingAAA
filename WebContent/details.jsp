@@ -108,8 +108,10 @@
            				</div>
                         
   			            <div class="choose-btns">
-                             <button class="layui-btn layui-btn-primary purchase-btn">立刻购买</button>
-         
+  			            
+  			        		<a href="index.jsp">
+                             <input class="layui-btn layui-btn-primary purchase-btn" type="submit" value="立即购买"/>
+         					</a>
                              <a href="javascript:void(0)" onclick="addCart()">
                                  <button class="layui-btn  layui-btn-danger car-btn"><i class="layui-icon layui-icon-cart-simple"></i>加入购物车</button>  
                              </a> 

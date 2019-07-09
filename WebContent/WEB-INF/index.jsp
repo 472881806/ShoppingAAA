@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html ">
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>付款</title>
+<title>支付宝电脑网站支付</title>
 <style>
 * {
 	margin: 0;
@@ -193,7 +193,7 @@ h2 {
 </head>
 <body text=#000000 bgColor="#ffffff" leftMargin=0 topMargin=4>
 	<header class="am-header">
-	<h1>付款</h1>
+	<h1>支付宝电脑网站支付体验入口页</h1>
 	</header>
 	<div id="main">
 		<div id="tabhead" class="tab-head">
@@ -220,6 +220,11 @@ h2 {
 					<dt>付款金额 ：</dt>
 					<dd>
 						<input id="WIDtotal_amount" name="WIDtotal_amount" />
+					</dd>
+					<hr class="one_line">
+					<dt>商品描述：</dt>
+					<dd>
+						<input id="WIDbody" name="WIDbody" />
 					</dd>
 					<hr class="one_line">
 					<dt></dt>
