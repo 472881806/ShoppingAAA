@@ -109,7 +109,7 @@
                         
   			            <div class="choose-btns">
   			            
-  			        		<a href="index.jsp">
+  			        		<a href="pay_index.jsp">
                              <input class="layui-btn layui-btn-primary purchase-btn" type="submit" value="立即购买"/>
          					</a>
                              <a href="javascript:void(0)" onclick="addCart()">

@@ -129,7 +129,7 @@
         
         
         <div class="th Settlement">
-         <a href="index.jsp">
+         <a href="pay_index.jsp">
           <input class="layui-btn" onclick="SubmitOrder()" type="submit" value="提交订单"/>
           </a>
         </div>
