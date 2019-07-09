@@ -27,10 +27,10 @@ public class AlipayConfig {
     public static String alipay_public_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlTMfWrFRuiiv8TcShWxotNXs8vpTstPrZy/BjkhoCHNnu+NP13QGU1ajU1AlYIjn5VNcNw6npsvcX/S1+sM4CpDhs4cxpjRKDYVik16GQSNTZJvVpK2lHQsbijusG2ANlk6h9afXVV+AkMh2KOaXZbKrCrejgAFIzeeR4DkxG0BfJHJEK4CdDUlly9nGUlSPo6glFMS2AXm9KFfLvKXdkbrpllwDdJhywFlSD1SiTvS2WQhudblOKaFa0++ps4k3lObZ6WQI9qfpHsqhjpt73hjKwYI2z8tmq6owTkW1EeMaVlMS8O5AYTrJWF84EqzsEMr67J7irnt5wtIpfC3xWQIDAQAB";
 
 	// 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-	public static String notify_url = "http://huangcaihong.free.idcfengye.com/alipay.trade.page.pay-JAVA-UTF-8/notify_url.jsp";
+	public static String notify_url = "http://huangcaihong.free.idcfengye.com/ShoppingAAA/notify_url.jsp";
 
 	// 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-	public static String return_url = "http://huangcaihong.free.idcfengye.com/alipay.trade.page.pay-JAVA-UTF-8/return_url.jsp";
+	public static String return_url = "http://huangcaihong.free.idcfengye.com/ShoppingAAA/return_url.jsp";
 
 	// 签名方式
 	public static String sign_type = "RSA2";
