@@ -81,24 +81,26 @@
 	          	  Product pro = (Product)pros.get(i);
 	          	  String pid = pro.getPid();
 	          	  String pname = pro.getPname();
+	          	  String content = pro.getContent();
+	          	  String kind = pro.getKind();
 	          	  String pimage = pro.getPimage();
 	          	  double price = pro.getPrice();
 	        %>
             <div class="product-intro layui-clear">
             
   	          <div class="preview-wrap">
-  	          	<a href="javascript:;"><img src="<%=pimage %>.jpg"></a>
+  	          	<a href="javascript:;"><img src="dbimgs/<%=kind %>/<%=pimage %>"></a>
   	          </div>
   	          
   	          <div class="itemInfo-wrap">
   		          <div class="itemInfo">
   			            <div class="title">
-  			              <h4><%=pname %></h4>
+  			              <h4><%=pname %><%=content %></h4>
   			              <span><i class="layui-icon layui-icon-rate-solid"></i>收藏</span>
   			            </div>
   			            
   			            <div class="summary">
-  			              <p class="reference"><span>商品编号</span><p id="p_id">0001</p></p>
+  			              <p class="reference"><span>商品编号</span><p id="p_id"><%=pid %></p></p>
   			              <p class="activity"><span>活动价</span><strong class="price"><i>￥</i><%=price %></strong></p>
   			              
   			            </div>

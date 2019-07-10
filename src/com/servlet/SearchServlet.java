@@ -40,7 +40,7 @@ public class SearchServlet extends HttpServlet {
 			String name = request.getParameter("title");
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "scott", "admin");
-			String sql = "select * from product2 where pname like '%"+name+"%'";
+			String sql = "select * from content_s where cname like '%"+name+"%' or content like '%"+name+"%' ";
 			PreparedStatement pst = conn.prepareStatement(sql);
 			ResultSet rs = pst.executeQuery();
 			
@@ -48,15 +48,24 @@ public class SearchServlet extends HttpServlet {
 			
 			if(rs!=null){
 				while(rs.next()){
-					String pimage = rs.getString(2);
-					String pname = rs.getString(3);
-					double price = rs.getDouble(4);
+					String pid = rs.getString(1);
+					String pname = rs.getString(2);
+					double price = rs.getDouble(3);
+					long pnum = rs.getLong(4);
+					String content = rs.getString(6);
+					String kind = rs.getString(7);
+					String pimage = rs.getString(8);
 					
 					Product pro = new Product();
-					pro.setPimage(pimage);
+					pro.setPid(pid);
 					pro.setPname(pname);
 					pro.setPrice(price);
+					pro.setPnum(pnum);
+					pro.setContent(content);
+					pro.setKind(kind);
+					pro.setPimage(pimage);
 					pros.add(pro);
+
 				}
 				
 				request.setAttribute("pros", pros);

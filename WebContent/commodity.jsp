@@ -112,64 +112,66 @@
             <div class="prod-number">
               <span>200个</span>
             </div>
+           
             <div class="cont-list layui-clear" id="list-cont">
  			 	<div class="item">
-	                <div class="img" id="0000">
-	                  <a href="detail?id='0000'"><img src="jq/res/static/img/paging_img2.jpg"></a>
+	                <div class="img" id="1002">
+	                  <a href="detail?id='1002'"><img src="dbimgs/奶粉/n1001.jpg"></a>
 	                </div>
-	                
 	                <div class="text">
-	                  <p class="title">森系小清新四件套</p>
+	                  <p class="title">安满孕妇营养奶粉（调制乳粉）</p>
 	                  <p class="price">
-	                    <span class="pri">￥200</span>
+	                    <span class="pri">￥198.00</span>
 	                    <span class="nub">1266付款</span>
 	                  </p>
 	                </div>
                </div>
             </div>
-            <div class="cont-list layui-clear" id="list-cont">
+            
+              <div class="cont-list layui-clear" id="list-cont">
  			 	<div class="item">
-	                <div class="img" id="0001">
-	                  <a href="detail?id='0001'"><img src="jq/res/static/img/paging_img2.jpg"></a>
+	                <div class="img" id="2002">
+	                  <a href="detail?id='2002'"><img src="dbimgs/纸尿裤/z2001.jpg"></a>
 	                </div>
 	                <div class="text">
-	                  <p class="title">森系小清新四件套</p>
+	                  <p class="title">好奇超薄干爽好用纸尿裤</p>
 	                  <p class="price">
-	                    <span class="pri">￥200</span>
+	                    <span class="pri">￥168.00</span>
 	                    <span class="nub">1266付款</span>
 	                  </p>
 	                </div>
                </div>
             </div>
-            <div class="cont-list layui-clear" id="list-cont">
+           
+           <div class="cont-list layui-clear" id="list-cont">
  			 	<div class="item">
-	                <div class="img" id="0002">
-	                  <a href="detail?id='0002'"><img src="jq/res/static/img/paging_img3.jpg"></a>
+	                <div class="img" id="3002">
+	                  <a href="detail?id='3002'"><img src="dbimgs/洗护用品/x3001.jpg"></a>
 	                </div>
 	                <div class="text">
-	                  <p class="title">森系小清新四件套</p>
+	                  <p class="title">青蛙王子婴儿清爽滋润护肤用品</p>
 	                  <p class="price">
-	                    <span class="pri">￥200</span>
-	                    <span class="nub">1266付款</span>
-	                  </p>
-	                </div>
-               </div>
-            </div>
-            <div class="cont-list layui-clear" id="list-cont">
- 			 	<div class="item">
-	                <div class="img" id="0003">
-	                  <a href="detail?id='0003'"><img src="jq/res/static/img/paging_img2.jpg"></a>
-	                </div>
-	                <div class="text">
-	                  <p class="title">森系小清新四件套</p>
-	                  <p class="price">
-	                    <span class="pri">￥200</span>
+	                    <span class="pri">￥208.00</span>
 	                    <span class="nub">1266付款</span>
 	                  </p>
 	                </div>
                </div>
             </div>
              
+             <div class="cont-list layui-clear" id="list-cont">
+ 			 	<div class="item">
+	                <div class="img" id="4002">
+	                  <a href="detail?id='4002'"><img src="dbimgs/婴儿推车/t4001.jpg"></a>
+	                </div>
+	                <div class="text">
+	                  <p class="title">德拉玛好婴儿，好推车</p>
+	                  <p class="price">
+	                    <span class="pri">￥388.00</span>
+	                    <span class="nub">1266付款</span>
+	                  </p>
+	                </div>
+               </div>
+            </div>
             <!-- 模版引擎导入 -->
             <!-- <script type="text/html" id="demo">
               {{# layui.each(d.menu.milk.content,function(index,item){}}    

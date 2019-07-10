@@ -126,7 +126,90 @@ public class CartServlet extends BaseServlet{
 			//跳转回cart.jsp
 			response.sendRedirect("shopcart.jsp");
 		}
-
+      //减少商品数量
+		public void lessNum(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			//1.获得要修改的item的pid
+			String pid = request.getParameter("pid");
+			//要减去的商品小计
+			double newsubtotal=0.0;
+			//2.session中的购物车中的购物项集合中的item
+			HttpSession session = request.getSession();
+			Cart cart = (Cart) session.getAttribute("cart");
+			if(cart!=null){
+				Map<String, CartItem> cartItems = cart.getCartItems();
+				//获去要修改的购物项
+				CartItem cartItem=cartItems.get(pid);
+				//需要修改数量
+				//获取原有的商品数量
+				int oldNum=cartItem.getBuyNum();
+				oldNum=oldNum-1;
+				//将总的商品购买数量放到购物项里面
+				cartItem.setBuyNum(oldNum);
+				//将购物项放到购物车里面
+				cart.setCartItems(cartItems);
+				
+				
+				 //修改小计
+				 
+				 //原来商品小计
+				 double oldsubtotal = cartItem.getSubtotal();
+				 //要减去的商品小计
+				 newsubtotal=1*cartItem.getProduct().getPrice();
+				//新的商品小计
+				 cartItem.setSubtotal(oldsubtotal-newsubtotal);
+				//计算所有商品的总价格
+					double total=cart.getTotal()-newsubtotal;
+					cart.setTotal(total);
+			}
+			session.setAttribute("cart", cart);
+			//跳转回cart.jsp
+			response.sendRedirect("shopcart.jsp");
+		}
+		
+		
+		//增加商品数量
+				public void addNum(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+					//1.获得要修改的item的pid
+					String pid = request.getParameter("pid");
+					//要加上的商品小计
+					double newsubtotal=0.0;
+					//2.session中的购物车中的购物项集合中的item
+					HttpSession session = request.getSession();
+					Cart cart = (Cart) session.getAttribute("cart");
+					if(cart!=null){
+						Map<String, CartItem> cartItems = cart.getCartItems();
+						//获去要修改的购物项
+						CartItem cartItem=cartItems.get(pid);
+						//需要修改数量
+						//获取原有的商品数量
+						int oldNum=cartItem.getBuyNum();
+						oldNum=oldNum+1;
+						//将总的商品购买数量放到购物项里面
+						cartItem.setBuyNum(oldNum);
+						//将购物项放到购物车里面
+						cart.setCartItems(cartItems);
+						
+						
+						 //修改小计
+						 
+						 //原来商品小计
+						 double oldsubtotal = cartItem.getSubtotal();
+						 //要加上的商品小计
+						 newsubtotal=1*cartItem.getProduct().getPrice();
+						//新的商品小计
+						 cartItem.setSubtotal(oldsubtotal+newsubtotal);
+						//计算所有商品的总价格
+							double total=cart.getTotal()+newsubtotal;
+							cart.setTotal(total);
+					}
+					session.setAttribute("cart", cart);
+					//跳转回cart.jsp
+					response.sendRedirect("shopcart.jsp");
+				}
+				
+		
+		
+		
 		//提交订单
 		public void submitOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
            //获取购物车

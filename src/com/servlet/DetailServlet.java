@@ -43,7 +43,7 @@ public class DetailServlet extends HttpServlet {
 			String id = request.getParameter("id");
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "scott", "admin");
-			String sql = "select * from product2 where pid ="+id;
+			String sql = "select * from content_s where comno ="+id;
 			PreparedStatement pst = conn.prepareStatement(sql);
 			ResultSet rs = pst.executeQuery();
 			
@@ -51,16 +51,23 @@ public class DetailServlet extends HttpServlet {
 			
 			while(rs.next()){
 				String pid = rs.getString(1);
-				String pimage = rs.getString(2);
-				String pname = rs.getString(3);
-				double price = rs.getDouble(4);
+				String pname = rs.getString(2);
+				double price = rs.getDouble(3);
+				long pnum = rs.getLong(4);
+				String content = rs.getString(6);
+				String kind = rs.getString(7);
+				String pimage = rs.getString(8);
 				
 				Product pro = new Product();
 				pro.setPid(pid);
-				pro.setPimage(pimage);
 				pro.setPname(pname);
 				pro.setPrice(price);
+				pro.setPnum(pnum);
+				pro.setContent(content);
+				pro.setKind(kind);
+				pro.setPimage(pimage);
 				pros.add(pro);
+
 			}
 			
 			request.setAttribute("pros", pros);

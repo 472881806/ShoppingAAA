@@ -18,16 +18,21 @@ public class ProductDaoImpl implements ProductDao {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/orcl", "scott", "admin");
-			String sql = "select * from Product2 where pid=?";//PRODUCT是商品表
+			String sql = "select * from content_s where comno=?";//PRODUCT是商品表
 			PreparedStatement psmt = conn.prepareStatement(sql);
 			psmt.setString(1, pid);
 			ResultSet rs=psmt.executeQuery();
 			if(rs.next()){
 				Product p=new Product();
-			    p.setPid(rs.getString("pid"));//商品表第一列列名
-				p.setPimage(rs.getString("pimage"));//商品表第二列列名
-				p.setPname(rs.getString("pname"));
-			    p.setPrice(rs.getDouble("Shop_price"));//商品表第四列列名
+			    p.setPid(rs.getString(1));//商品表第一列列名
+			    //设置图片地址
+			    p.setKind(rs.getString(7));//商品表第七列列名
+				p.setPimage(rs.getString(8));//商品表第八列列名
+				//设置商品名称
+				p.setPname(rs.getString(2));
+				p.setContent(rs.getString(6));
+				//设置价格
+			    p.setPrice(rs.getDouble(3));//商品表第四列列名
 			    
 			    return p;
 			}

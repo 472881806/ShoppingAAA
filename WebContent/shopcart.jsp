@@ -10,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="jq/res/static/css/main.css">
   <link rel="stylesheet" type="text/css" href="jq/res/layui/css/layui.css">
   <script type="text/javascript" src="jq/res/layui/layui.js"></script>
+  <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 </head>
@@ -35,8 +36,8 @@
       <div class="inner-cont0">
         <div class="inner-cont1 w1200">
           <div class="inner-cont2">
-            <a href="commodity.jsp" class="active">所有商品</a>
-            <a href="buytoday.jsp">今日团购</a>
+            <a href="commodity.jsp" class="">所有商品</a>
+           
             <a href="shopcart.jsp">购物车</a>
             <a href="user.jsp">个人中心</a>
           </div>
@@ -104,9 +105,9 @@
          
             <li class="th th-item">
               <div class="item-cont">
-                <a href="javascript:;"><img src="${entry.value.product.pimage}.jpg"></a>
+                <a href="javascript:;"><img src="dbimgs/${entry.value.product.kind}/${entry.value.product.pimage}"></a>
                 <div class="text">
-                  <div class="title">${entry.value.product.pname}</div>
+                  <div class="title">${entry.value.product.pname}${entry.value.product.content}</div>
                   
                 </div>
               </div>
@@ -118,9 +119,13 @@
             
             <li class="th th-amount">
               <div class="box-btn layui-clear">
-                <div class="less layui-btn">-</div>
-                <input class="Quantity-input" type="" name="" value="${entry.value.buyNum }" disabled="disabled">
-                <div class="add layui-btn">+</div>
+	               <a href="product?method=lessNum&pid=${entry.value.product.pid}">
+	                <div class="less layui-btn">-</div>
+	               </a>
+                <input class="Quantity-input" id="n_num" type="" name="" value="${entry.value.buyNum }" disabled="disabled">
+                  <a href="product?method=addNum&pid=${entry.value.product.pid}">
+                    <div class="add layui-btn">+</div>
+                  </a>
               </div>
             </li>
             
@@ -180,11 +185,13 @@
 
 
 });
-  
   function addOrder(){
 	  
-		location.href="Order.jsp";
+	  var num=$("#n_num").val();
+	  
+		location.href="Order.jsp?buyNum="+num;
 	  }
+  
 </script>
 </body>
 </html>

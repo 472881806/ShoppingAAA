@@ -110,9 +110,9 @@
          
             <li class="th th-item">
               <div class="item-cont">
-                <a href="javascript:;"><img src="${entry.value.product.pimage}.jpg"></a>
+                <a href="javascript:;"><img src="dbimgs/${entry.value.product.kind}/${entry.value.product.pimage}"></a>
                 <div class="text">
-                  <div class="title">${entry.value.product.pname}</div>
+                  <div class="title">${entry.value.product.pname}${entry.value.product.content}</div>
                   
                 </div>
               </div>
