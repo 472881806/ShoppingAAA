@@ -217,7 +217,7 @@ h2 {
 						<input id="WIDsubject" name="WIDsubject" />
 					</dd>
 					<hr class="one_line">
-					<dt>应付：<span class="pieces-total">${cart.total}</span></dt>
+					<dt>付款金额：</dt>
 					<dd>
 						<input id="WIDtotal_amount" name="WIDtotal_amount" />
 					</dd>
@@ -395,7 +395,7 @@ h2 {
 		sNow += String(vNow.getMilliseconds());
 		document.getElementById("WIDout_trade_no").value =  sNow;
 		document.getElementById("WIDsubject").value = "测试";
-		document.getElementById("WIDtotal_amount").value = "0.01";
+		document.getElementById("WIDtotal_amount").value = "${cart.total}";
 	}
 	GetDateNow();
 </script>
