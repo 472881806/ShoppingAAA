@@ -64,7 +64,7 @@ public class ProductDaoImpl implements ProductDao {
 				psmt.setObject(4, order.getTotal());
 				psmt.setObject(5, order.getState());
 				psmt.setObject(6, order.getAddress());
-				psmt.setObject(7, order.getUser().getUname());
+				psmt.setObject(7, order.getName());
 				psmt.setObject(8, order.getTelephone());
 				psmt.execute();
 				

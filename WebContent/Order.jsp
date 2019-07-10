@@ -9,7 +9,10 @@
   <title>订单</title>
   <link rel="stylesheet" type="text/css" href="jq/res/static/css/main.css">
   <link rel="stylesheet" type="text/css" href="jq/res/layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/css/bootstrap.min.css"/>
+  <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
   <script type="text/javascript" src="jq/res/layui/layui.js"></script>
+  <script type="text/javascript" src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 </head>
@@ -23,16 +26,34 @@
     
    
    <div class="cart w1200">
-     <div style="height:80px;background:#999999;font-size:30px;color:white">
-                  <strong>收货人姓名：</strong><input type="text">
-     </div>
-     <div style="height:80px;background:#999999;font-size:30px;color:white">
-                  <strong>收货人电话：</strong><input type="text">
-     </div>
-     <div style="height:80px;background:#999999;font-size:30px;color:white">
-                  <strong>收货地址：</strong><input type="text">
-     </div>
-    
+      <!--地址-->
+        <form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label for="firstname" class="col-sm-2 control-label">收货人姓名：</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="name" 
+						   placeholder="请输入姓名">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="lastname" class="col-sm-2 control-label">收货人电话：</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="telephone" 
+						   placeholder="请输入手机号">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="lastname" class="col-sm-2 control-label">收货地址：</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="address" 
+						   placeholder="请输入地址">
+				</div>
+			</div>
+	
+		</form>
+     
+     
+     
       <!-- 头部 开始-->
       <div class="cart-table-th">
         <div class="th th-chk">
@@ -129,8 +150,8 @@
         
         
         <div class="th Settlement">
-         <a href="javascript:void(0)">
-          <input class="layui-btn" onclick="SubmitOrder()" type="submit" value="提交订单"/>
+          <a href="javascript:void(0)">
+           <button class="layui-btn" onclick="SubmitOrder()">提交订单</button>
           </a>
         </div>
         
@@ -156,8 +177,13 @@
 
 });
   function SubmitOrder(){
-	   
-		location.href="product?method=submitOrder";
+	   var buyname= $("#name").val();
+	   var telephone=$("#telephone").val();
+	   var address=$("#address").val();
+	  
+	    
+	  
+		location.href="product?method=submitOrder&buyname="+buyname+"&telephone="+telephone+"&address="+address;
 	
 	  }
 </script>

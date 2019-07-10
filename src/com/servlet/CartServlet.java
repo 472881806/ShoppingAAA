@@ -132,6 +132,14 @@ public class CartServlet extends BaseServlet{
            //获取购物车
 			HttpSession session = request.getSession();
 			
+			//获取收货人姓名
+		      String buyname=request.getParameter("buyname");
+		    //获取收货人电话
+		      String telephone=request.getParameter("telephone");
+		    //获取收货地址
+		      String address=request.getParameter("address");
+		    
+		      
 			//User user = (User) session.getAttribute("user");
 			User user=new User();
 			user.setUid("002");
@@ -162,13 +170,13 @@ public class CartServlet extends BaseServlet{
 			order.setState(0);
 
 			//5、private String address;//收货地址
-			order.setAddress(null);
+			order.setAddress(address);
 
 			//6、private String name;//收货人
-			order.setName(null);
+			order.setName(buyname);
 
 			//7、private String telephone;//收货人电话
-			order.setTelephone(null);
+			order.setTelephone(telephone);
 
 			//8、private User user;//该订单属于哪个用户
 			order.setUser(user);
