@@ -129,7 +129,7 @@
         
         
         <div class="th Settlement">
-         <a href="pay_index.jsp">
+         <a href="javascript:void(0)">
           <input class="layui-btn" onclick="SubmitOrder()" type="submit" value="提交订单"/>
           </a>
         </div>
@@ -156,8 +156,9 @@
 
 });
   function SubmitOrder(){
-		
+	   
 		location.href="product?method=submitOrder";
+	
 	  }
 </script>
 </body>

@@ -134,7 +134,7 @@
 <script type="text/javascript">
 
  function addCart(){
-	 alert();
+	 
 		//获得购买的商品的数量
 		var buyNum = $("#buyNum").find("input").val();
 		var pid=$("#p_id").text();

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import com.model.Cart;
 import com.model.CartItem;
+import com.model.CommonUtils;
 import com.model.Order;
 import com.model.OrderItem;
 import com.model.Product;
@@ -133,8 +134,10 @@ public class CartServlet extends BaseServlet{
 			
 			//User user = (User) session.getAttribute("user");
 			User user=new User();
-			user.setUid("001");
+			user.setUid("002");
 			user.setUname("李三岁");
+			
+			
 			
 			
 			 
@@ -143,7 +146,8 @@ public class CartServlet extends BaseServlet{
 
 			//1、private String oid;//该订单的订单号
 			
-			order.setOid("123456789");
+			String oid=CommonUtils.getOOid();
+			order.setOid(oid);
 
 			//2、private Date ordertime;//下单时间
 			order.setOrdertime(new Date());
@@ -179,7 +183,7 @@ public class CartServlet extends BaseServlet{
 				//创建新的订单项
 				OrderItem orderItem = new OrderItem();
 				//1)private String iid;//订单项的id
-				orderItem.setIid("123456");
+				orderItem.setIid(CommonUtils.getOOid());
 				//2)private int count;//订单项内商品的购买数量
 				orderItem.setCount(cartItem.getBuyNum());
 				//3)private double subtotal;//订单项小计
@@ -203,7 +207,7 @@ public class CartServlet extends BaseServlet{
 			session.setAttribute("order", order);
 
 			//页面跳转
-			response.sendRedirect("Order.jsp");
+			response.sendRedirect("pay_index.jsp");
 
 
 		}

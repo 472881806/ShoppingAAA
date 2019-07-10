@@ -182,7 +182,7 @@
 });
   
   function addOrder(){
-		
+	  
 		location.href="Order.jsp";
 	  }
 </script>
